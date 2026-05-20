@@ -5,82 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a0505;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #f2e8e8;
+        }
+
+        .headerBnt {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            background-color: #3d0f0f;
+            padding: 20px;
+            margin: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .headerStyleBnt {
+            padding: 12px 40px;
+            background-color: #1a0505;
+            border-radius: 30px;
+            transition: 0.2s;
+        }
+        .headerStyleBnt:hover {
+            transform: scale(1.05);
+            background-color: #5c1a1a;
+        }
+        .headerStyleBnt a {
+            text-decoration: none;
+            color: #f2e8e8;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #3d0f0f;
+            padding: 50px;
+            margin: 40px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #f2e8e8;
+        }
+        .btn-catalog {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #9e3b3b;
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .btn-catalog:hover {
+            background-color: #5c1a1a;
+            transform: scale(1.05);
+        }
+
+        .about-section {
+            text-align: center;
+            margin: 40px auto;
+        }
+        .aboutMe {
+            display: inline-block;
+            background-color: #5c1a1a;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .aboutMe:hover {
+            background-color: #9e3b3b;
+            transform: scale(1.05);
+        }
         
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        background-color: #1a1a2e;
-        height: 100vh;
-        font-family: 'Segoe UI', Arial, sans-serif;
-        color: #e0e0e0;
-    }
-
-    .headerBnt {
-        display: flex;
-        justify-content: center;
-        gap: 50px;
-        background-color: #16213e;
-        padding: 20px;
-        margin: 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .headerStyleBnt {
-        padding: 12px 40px;
-        background-color: #1a1a2e;
-        border-radius: 30px;
-        transition: 0.2s;
-    }
-    .headerStyleBnt:hover {
-        transform: scale(1.05);
-        background-color: #0f3460;
-    }
-    .headerStyleBnt a {
-        text-decoration: none;
-        color: white;
-        font-size: 18px;
-        font-weight: 500;
-    }
-
-    .header {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #16213e;
-        padding: 50px;
-        border-radius: 20px;
-        margin: 40px 20px;
-        text-align: center;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-    .header h1 {
-        font-size: 48px;
-        margin-bottom: 20px;
-        color: #e94560;
-    }
-
-     @media (max-width: 768px) {
-    .headerBnt {
-        gap: 15px;
-        padding: 15px;
-        flex-wrap: wrap;
-    }
-    .headerStyleBnt {
-        padding: 10px 20px;
-    }
-    .headerStyleBnt a {
-        font-size: 14px;
-    }
-    }
-    .aboutMe {
-        display: grid;
-        justify-content: center;
-    }
+        @media (max-width: 768px) {
+            .headerBnt {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            .headerStyleBnt {
+                padding: 8px 16px;
+            }
+            .headerStyleBnt a {
+                font-size: 14px;
+            }
+            .header h1 {
+                font-size: 32px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -111,8 +141,8 @@
         <p>Проект полностью рабочий, адаптирован под телефон, планшет и ПК.</p>
     </div>
 
-    <div class="aboutMe">
-            <a href="aboutMe.html">Об авторе</a>
-    </div> 
+    <div style="text-align: center; margin: 40px auto;">
+        <a href="aboutMe.html" class="aboutMe">Об авторе</a>
+    </div>
 </body>
 </html>
