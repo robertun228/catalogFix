@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <style>
+        
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #1a1a2e;
+        height: 100vh;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #e0e0e0;
+    }
+
+    .headerBnt {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        background-color: #16213e;
+        padding: 20px;
+        margin: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .headerStyleBnt {
+        padding: 12px 40px;
+        background-color: #1a1a2e;
+        border-radius: 30px;
+        transition: 0.2s;
+    }
+    .headerStyleBnt:hover {
+        transform: scale(1.05);
+        background-color: #0f3460;
+    }
+    .headerStyleBnt a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #16213e;
+        padding: 50px;
+        border-radius: 20px;
+        margin: 40px 20px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .header h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: #e94560;
+    }
+
+    .aboutMe {
+        display: grid;
+        justify-content: center;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="headerBnt">
+        <div class="headerStyleBnt">
+            <a href="index.html">Главная</a>
+        </div>
+
+        <div class="headerStyleBnt">
+            <a href="catalog.html">Каталог</a>
+        </div>
+
+        <div class="headerStyleBnt">
+            <a href="cart.html">Корзина</a>
+        </div>       
+    </div>
+
+    <div class="header">
+        <h1>Добро пожаловать!</h1>
+        <p>Учебный проект интернет-магазина. Товары, корзина, сохранение данных — всё на чистом HTML, CSS и JavaScript.</p>
+    </div>
+
+    <div class="header">
+        <h1>О проекте</h1>
+        <p>Это мой первый полноценный проект — интернет-магазин с каталогом товаров и корзиной. Корзина сохраняется в localStorage, поэтому данные не пропадают после перезагрузки страницы.</p>
+        <p>-------------</p>
+        <p>Проект полностью рабочий, адаптирован под телефон, планшет и ПК.</p>
+    </div>
+
+    <div class="aboutMe">
+            <a href="aboutMe.html">Об авторе</a>
+    </div> 
+</body>
+</html>

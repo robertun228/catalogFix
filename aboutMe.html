@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #1a1a2e;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #e0e0e0;
+        }
+
+        .headerBnt {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            background-color: #16213e;
+            padding: 20px;
+            margin: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .headerStyleBnt {
+            padding: 12px 40px;
+            background-color: #1a1a2e;
+            border-radius: 30px;
+            transition: 0.2s;
+        }
+        .headerStyleBnt:hover {
+            transform: scale(1.05);
+            background-color: #0f3460;
+        }
+        .headerStyleBnt a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .about-card {
+            background-color: #0f3460;
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid #e94560;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .about-card h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #e94560;
+            text-align: center;
+        }
+
+        .about-card p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #e94560;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.2s;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .back-btn:hover {
+            background-color: #c72a48;
+            transform: scale(1.02);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="headerBnt">
+        <div class="headerStyleBnt"><a href="index.html">Главная</a></div>
+        <div class="headerStyleBnt"><a href="catalog.html">Каталог</a></div>
+        <div class="headerStyleBnt"><a href="cart.html">Корзина</a></div>   
+    </div>
+
+    <div class="about-container">
+        <div class="about-card">
+            <h1>Обо мне</h1>
+            <p>Меня зовут Тимур, мне 16 лет. Я начинающий веб-разработчик.</p>
+            <p>Этот проект — мой первый полноценный интернет-магазин с каталогом, корзиной и сохранением данных в localStorage. Сайт адаптирован под телефон, планшет и ПК.</p>
+            <p>Использовал: HTML, CSS (Grid, Flexbox, адаптив), JavaScript (массивы, объекты, localStorage).</p>
+            <p>Моя цель - стать Fullstack-разработчиком и создавать полезные вещи.</p>
+            <div style="text-align: center;">
+                <a href="index.html" class="back-btn">← Назад</a>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

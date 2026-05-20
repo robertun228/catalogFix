@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: #1a1a2e;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #e0e0e0;
+    }
+
+    .headerBnt {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        background-color: #16213e;
+        padding: 20px;
+        margin: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .headerStyleBnt {
+        padding: 12px 40px;
+        background-color: #1a1a2e;
+        border-radius: 30px;
+        transition: 0.2s;
+    }
+    .headerStyleBnt:hover {
+        transform: scale(1.05);
+        background-color: #0f3460;
+    }
+    .headerStyleBnt a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .cart-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #0f3460;
+        border-radius: 20px;
+    }
+
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1a1a2e;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .cart-item-info {
+        flex: 2;
+    }
+
+    .cart-item-price {
+        flex: 1;
+        text-align: center;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .remove-btn {
+        background-color: #e94560;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .remove-btn:hover {
+        background-color: #c72a48;
+    }
+
+    .total {
+        text-align: right;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 2px solid #e94560;
+    }
+
+    .empty-cart {
+        text-align: center;
+        padding: 40px;
+        font-size: 20px;
+        color: #e0e0e0;
+    }
+
+    .clear-btn {
+        background-color: #e94560;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .clear-btn:hover {
+        background-color: #c72a48;
+    }
+    </style>
+</head>
+<body>
+    <div class="headerBnt">
+        <div class="headerStyleBnt"><a href="index.html">Главная</a></div>
+        <div class="headerStyleBnt"><a href="catalog.html">Каталог</a></div>
+        <div class="headerStyleBnt"><a href="cart.html">Корзина</a></div>       
+    </div>
+
+    <div class="cart-container" id="cart-container">
+        <div class="empty-cart">Корзина пуста</div>
+    </div>
+
+    <script>
+        
+        const products = [
+            { id: 1, name: "Ноутбук", price: 23000 },
+            { id: 2, name: "Планшет", price: 15000 },
+            { id: 3, name: "Моноблок", price: 40000 },
+            { id: 4, name: "Конструктор", price: 10000 },
+            { id: 5, name: "Духи", price: 1500 },
+            { id: 6, name: "Товар", price: 1000 },
+            { id: 7, name: "Протеин", price: 4500 },
+            { id: 8, name: "Креатин", price: 1000 }
+        ]
+
+        
+        let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+        function saveCart() {
+            localStorage.setItem("cart", JSON.stringify(cart))
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId)
+            saveCart();
+            displayCart()
+        }
+
+        function clearCart() {
+            cart = [];
+            saveCart();
+            displayCart();
+        }
+
+        function displayCart() {
+            const container = document.getElementById("cart-container")
+            if (!container) return
+
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="empty-cart">Корзина пуста</div>`;
+                return
+            }
+
+            let total = 0
+            let html = ""
+
+            cart.forEach(item => {
+                const product = products.find(p => p.id === item.id)
+                if (product) {
+                    total += product.price
+                    html += `
+                        <div class="cart-item">
+                            <div class="cart-item-info">
+                                <strong>${product.name}</strong>
+                            </div>
+                            <div class="cart-item-price">${product.price} ₽</div>
+                            <button class="remove-btn" onclick="removeFromCart(${product.id})">Удалить</button>
+                        </div>
+                    `
+                }
+            })
+
+            html += `
+                <div class="total">Итого: ${total} ₽</div>
+                <button class="clear-btn" onclick="clearCart()">Очистить корзину</button>
+            `;
+            container.innerHTML = html
+        }
+
+        displayCart();
+    </script>
+</body>
+</html>

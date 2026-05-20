@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: #1a1a2e;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #e0e0e0;
+    }
+
+    .headerBnt {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        background-color: #16213e;
+        padding: 20px;
+        margin: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .headerStyleBnt {
+        padding: 12px 40px;
+        background-color: #1a1a2e;
+        border-radius: 30px;
+        transition: 0.2s;
+    }
+    .headerStyleBnt:hover {
+        transform: scale(1.05);
+        background-color: #0f3460;
+    }
+    .headerStyleBnt a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .catalogBackground {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .thingsCatalog {
+        background-color: #0f3460;
+        border-radius: 16px;
+        padding: 15px;
+        transition: 0.2s;
+        border: 1px solid #e94560;
+        text-align: center;
+    }
+    .thingsCatalog:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .thingsCatalog img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 12px;
+    }
+
+    .thingsCatalog p {
+        margin: 8px 0;
+        color: white;
+    }
+
+    .price {
+        font-weight: bold;
+        font-size: 18px;
+        color: #e94560;
+    }
+
+    .buy-btn {
+        background-color: #e94560;
+        border: none;
+        border-radius: 40px;
+        padding: 8px 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+        color: white;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .buy-btn:hover {
+        background-color: #c72a48;
+        transform: scale(1.02);
+    }
+
+    @media (max-width: 1000px) {
+        .catalogBackground {
+            grid-template-columns: 1fr 1fr;
+            max-width: 700px;
+        }
+    }
+    @media (max-width: 550px) {
+        .catalogBackground {
+            grid-template-columns: 1fr;
+            max-width: 300px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="headerBnt">
+        <div class="headerStyleBnt"><a href="index.html">Главная</a></div>
+        <div class="headerStyleBnt"><a href="catalog.html">Каталог</a></div>
+        <div class="headerStyleBnt"><a href="cart.html">Корзина</a></div>       
+    </div>
+
+    <div class="catalogBackground">
+        <div class="thingsCatalog">
+            <img src="https://catalog-cdn.detmir.st/media/wgJe8ssagGXvjgUz0g2OSN5rZx97zOnX7zyRODC7btM=.jpeg" alt="Ноутбук">
+            <p>Ноутбук</p>
+            <p class="price">23000 ₽</p>
+            <button class="buy-btn" onclick="addToCart(1)">Купить</button>
+        </div>
+
+        <div class="thingsCatalog">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4cLaxMUjAFP1XQ_FV8qq2Zf-kN4R_OAuwTA&s" alt="Планшет">
+            <p>Планшет</p>
+            <p class="price">15000 ₽</p>
+            <button class="buy-btn" onclick="addToCart(2)">Купить</button>
+        </div>
+
+        <div class="thingsCatalog">
+            <img src="https://ir.ozone.ru/s3/multimedia-1-j/wc1000/8124998887.jpg" alt="Моноблок">
+            <p>Моноблок</p>
+            <p class="price">40000 ₽</p>
+            <button class="buy-btn" onclick="addToCart(3)">Купить</button>
+        </div>
+
+        <div class="thingsCatalog">
+            <img src="https://ir.ozone.ru/s3/multimedia-1-g/c1000/7248886540.jpg" alt="Конструктор">
+            <p>Конструктор</p>
+            <p class="price">10000 ₽</p>
+            <button class="buy-btn" onclick="addToCart(4)">Купить</button>
+        </div>
+
+        <div class="thingsCatalog">
+            <img src="https://ir.ozone.ru/s3/multimedia-h/w500/6758293697.jpg" alt="Духи">
+            <p>Духи</p>
+            <p class="price">1500 ₽</p>
+            <button class="buy-btn" onclick="addToCart(5)">Купить</button>
+        </div>
+
+        <div class="thingsCatalog">
+            <img src="https://catalog-cdn.detmir.st/media/wgJe8ssagGXvjgUz0g2OSN5rZx97zOnX7zyRODC7btM=.jpeg" alt="Товар">
+            <p>Товар</p>
+            <p class="price">1000 ₽</p>
+            <button class="buy-btn" onclick="addToCart(6)">Купить</button>
+        </div>
+
+        <div class="thingsCatalog">
+            <img src="https://ir.ozone.ru/s3/multimedia-1-n/c1000/7339550855.jpg" alt="Протеин">
+            <p>Протеин</p>
+            <p class="price">4500 ₽</p>
+            <button class="buy-btn" onclick="addToCart(7)">Купить</button>
+        </div>
+
+        <div class="thingsCatalog">
+            <img src="https://ir.ozone.ru/s3/multimedia-1-8/w500/7125223580.jpg" alt="Креатин">
+            <p>Креатин</p>
+            <p class="price">1000 ₽</p>
+            <button class="buy-btn" onclick="addToCart(8)">Купить</button>
+        </div>
+    </div>
+
+    <script>
+        
+        function addToCart(productId) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || []
+            
+            // есть ли 
+            const exists = cart.some(item => item.id === productId)
+            if (!exists) {
+                cart.push({ id: productId });
+                localStorage.setItem("cart", JSON.stringify(cart))
+                alert("Товар добавлен в корзину!")
+            } else {
+                alert("Товар уже в корзине!")
+            }
+        }
+    </script>
+</body>
+</html>
