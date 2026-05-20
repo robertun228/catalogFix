@@ -12,34 +12,34 @@
         }
         
         body {
-            background-color: #1a1a2e;
+            background-color: #1a0505;
             font-family: 'Segoe UI', Arial, sans-serif;
-            color: #e0e0e0;
+            color: #f2e8e8;
         }
 
         .headerBnt {
             display: flex;
             justify-content: center;
             gap: 50px;
-            background-color: #16213e;
+            background-color: #3d0f0f;
             padding: 20px;
             margin: 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         }
 
         .headerStyleBnt {
             padding: 12px 40px;
-            background-color: #1a1a2e;
+            background-color: #1a0505;
             border-radius: 30px;
             transition: 0.2s;
         }
         .headerStyleBnt:hover {
             transform: scale(1.05);
-            background-color: #0f3460;
+            background-color: #5c1a1a;
         }
         .headerStyleBnt a {
             text-decoration: none;
-            color: white;
+            color: #f2e8e8;
             font-size: 18px;
             font-weight: 500;
         }
@@ -51,17 +51,17 @@
         }
 
         .about-card {
-            background-color: #0f3460;
+            background-color: #3d0f0f;
             border-radius: 20px;
             padding: 40px;
-            border: 1px solid #e94560;
+            border: 1px solid #9e3b3b;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .about-card h1 {
             font-size: 36px;
             margin-bottom: 20px;
-            color: #e94560;
+            color: #f2e8e8;
             text-align: center;
         }
 
@@ -73,38 +73,42 @@
 
         .back-btn {
             display: inline-block;
-            background-color: #e94560;
+            background-color: #9e3b3b;
             color: white;
-            border: none;
-            border-radius: 40px;
-            padding: 12px 30px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
             text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: bold;
             transition: 0.2s;
             margin-top: 20px;
             text-align: center;
         }
         .back-btn:hover {
-            background-color: #c72a48;
-            transform: scale(1.02);
+            background-color: #5c1a1a;
+            transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
             .headerBnt {
                 gap: 15px;
-                padding: 15px;
                 flex-wrap: wrap;
             }
             .headerStyleBnt {
-                padding: 10px 20px;
+                padding: 8px 16px;
             }
             .headerStyleBnt a {
                 font-size: 14px;
             }
+            .about-card {
+                padding: 20px;
+            }
+            .about-card h1 {
+                font-size: 28px;
+            }
+            .about-card p {
+                font-size: 16px;
+            }
         }
-        
     </style>
 </head>
 <body>
